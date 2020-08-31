@@ -16,7 +16,8 @@ def Count(size):
 
 n, m = map(int, input().split())
 Music = list(map(int, input().split()))
-lt = 1
+maxx = max(Music)
+lt = maxx # DVD 최소용량은 적어도 가장 긴 곡보다는 커야 한다.
 rt = sum(Music)
 res = 0
 
