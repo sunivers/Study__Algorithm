@@ -1,14 +1,14 @@
 import sys
 from collections import deque
-sys.stdin = open('in5.txt', 'r')
+sys.stdin = open('in1.txt', 'r')
 
 need = list(input())
 n = int(input())
-plan = [input() for _ in range(n)]
 
-for i, p in enumerate(plan):
+for i in range(n):
   cur = 0
-  for j, x in enumerate(p):
+  plan = input()
+  for j, x in enumerate(plan):
     if x in need:
       for y in range(0, cur + 1):
         if x == need[y]:
@@ -17,8 +17,8 @@ for i, p in enumerate(plan):
       else:
         print('#%d NO' % (i + 1))
         break
-    if j == len(p) - 1:
-      if cur == len(need):
-        print('#%d YES' % (i + 1))
-      else:
-        print('#%d NO' % (i + 1))
+  else:
+    if cur == len(need):
+      print('#%d YES' % (i + 1))
+    else:
+      print('#%d NO' % (i + 1))
